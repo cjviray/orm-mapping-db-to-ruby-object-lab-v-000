@@ -43,8 +43,6 @@ class Student
      self.find_by_grade(row)
     end.first
   end 
-    
-  end 
   
   
   
