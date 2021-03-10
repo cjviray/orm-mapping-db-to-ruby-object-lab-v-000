@@ -41,7 +41,7 @@ class Student
     
     DB[:conn].execute(sql, grade).map do (row)
      self.find_by_grade(row)
-    end 
+    end.first
   end 
     
   end 
