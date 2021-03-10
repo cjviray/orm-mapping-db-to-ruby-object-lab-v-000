@@ -39,8 +39,8 @@ class Student
       WHERE grade = 9
     SQL
     
-    DB[:conn].execute(sql, grade).map do (grade)
-     self.find_by_grade(grade)
+    DB[:conn].execute(sql, grade).map do (row)
+     self.find_by_grade(row)
     end 
   end 
     
