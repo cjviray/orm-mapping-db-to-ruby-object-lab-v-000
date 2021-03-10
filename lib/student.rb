@@ -57,7 +57,7 @@ class Student
     end
   end 
   
-  def self.first_X_students_in_grade_10(num)
+  def self.first_X_students_in_grade_10(id)
     
     sql = <<-SQL
       SELECT * 
@@ -66,7 +66,7 @@ class Student
       LIMIT ?; 
     SQL
   
-    DB[:conn].execute(sql,num).map do |row|
+    DB[:conn].execute(sql,id).map do |row|
       self.new_from_db(row)
     end
   end 
@@ -85,7 +85,7 @@ class Student
     end.first
   end 
   
-  def self.all_students_in_grade_X(grade)
+  def self.all_students_in_grade_X(id)
     
     sql = <<-SQL
       SELECT * 
@@ -93,7 +93,7 @@ class Student
       WHERE grade = ?;
     SQL
     
-    DB[:conn].execute(sql,grade).map do |row|
+    DB[:conn].execute(sql,id).map do |row|
       self.new_from_db(row)
     end
   end
